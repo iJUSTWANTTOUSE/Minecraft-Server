@@ -1,0 +1,32 @@
+name: Build Resource Pack Zip
+
+on:
+  push:
+    branches:
+      - main  # change if your default branch is different
+  workflow_dispatch:  # allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Zip Resource Pack
+        run: |
+          zip -r MyResourcePack.zip . -x "*.github*" "*.git*" "*.DS_Store"
+
+      - name: Upload Zip as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: MyResourcePack
+          path: MyResourcePack.zip
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ github.run_number }}
+          release_name: "My Resource Pack v${{ github.run_number }}"
+          files: MyResourcePack.zip
