@@ -16,17 +16,17 @@ jobs:
 
       - name: Zip Resource Pack
         run: |
-          zip -r MyResourcePack.zip . -x "*.github*" "*.git*" "*.DS_Store"
+          zip -r MyResourcePack-v${{ github.run_number }}.zip . -x "*.github*" "*.git*" "*.DS_Store"
 
       - name: Upload Zip as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4   # updated to v4
         with:
           name: MyResourcePack
-          path: MyResourcePack.zip
+          path: MyResourcePack-v${{ github.run_number }}.zip
 
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
           tag: v${{ github.run_number }}
           release_name: "My Resource Pack v${{ github.run_number }}"
-          files: MyResourcePack.zip
+          files: MyResourcePack-v${{ github.run_number }}.zip
