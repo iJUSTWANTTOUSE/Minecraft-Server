@@ -1,0 +1,33 @@
+{
+    "model": {
+        "type": "range_dispatch",
+        "property": "custom_model_data",
+        "entries": [
+            {
+                "threshold": 100,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/item_magnet"
+                }
+            },
+            {
+                "threshold": 101,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/super_item_magnet"
+                }
+            },
+            {
+                "threshold": 110,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/dynamite_block"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "model",
+            "model": "item/paper"
+        }
+    }
+}

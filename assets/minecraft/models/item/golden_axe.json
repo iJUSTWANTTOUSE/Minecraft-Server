@@ -1,0 +1,11 @@
+{
+ "parent": "item/handheld",
+ "textures": {
+  "layer0": "item/golden_axe"
+ },
+ "overrides": [
+    { "predicate": { "custom_model_data": 100}, "model": "juix_resources:item/golden_battle_axe" },
+    { "predicate": { "custom_model_data": 101}, "model": "juix_resources:item/golden_tree_axe" }
+
+ ]
+}

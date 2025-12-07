@@ -1,0 +1,19 @@
+{
+"model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "entries": [
+        {
+            "threshold": 100,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/golden_hammer"
+            }
+        }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "item/golden_pickaxe"
+    }
+}
+}

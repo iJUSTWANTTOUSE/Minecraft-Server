@@ -1,0 +1,17 @@
+{
+  "parent": "item/generated",
+  "textures": {
+      "layer0": "item/spawn_egg",
+      "layer1": "item/spawn_egg_overlay"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 100}, "model": "juix_resources:item/lit_tnt" },
+    { "predicate": { "custom_model_data": 101}, "model": "juix_resources:item/bomb1" },
+    { "predicate": { "custom_model_data": 102}, "model": "juix_resources:item/bomb2" },
+    { "predicate": { "custom_model_data": 103}, "model": "juix_resources:item/bomb3" },
+    { "predicate": { "custom_model_data": 104}, "model": "juix_resources:item/bomb4" },
+    { "predicate": { "custom_model_data": 105}, "model": "juix_resources:item/bomb5" },
+    { "predicate": { "custom_model_data": 106}, "model": "juix_resources:item/bomb6" },
+    { "predicate": { "custom_model_data": 107}, "model": "juix_resources:item/bomb7" }
+  ]
+}

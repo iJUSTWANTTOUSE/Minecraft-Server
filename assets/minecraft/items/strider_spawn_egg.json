@@ -1,0 +1,68 @@
+{
+    "model": {
+        "type": "range_dispatch",
+        "property": "custom_model_data",
+        "entries": [
+            {
+                "threshold": 100,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/lit_tnt"
+                }
+            },
+            {
+                "threshold": 101,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb1"
+                }
+            },
+            {
+                "threshold": 102,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb2"
+                }
+            },
+            {
+                "threshold": 103,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb3"
+                }
+            },
+            {
+                "threshold": 104,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb4"
+                }
+            },
+            {
+                "threshold": 105,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb5"
+                }
+            },
+            {
+                "threshold": 106,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb6"
+                }
+            },
+            {
+                "threshold": 107,
+                "model": {
+                    "type": "model",
+                    "model": "juix_resources:item/bomb7"
+                }
+            }
+        ],
+        "fallback": {
+            "type": "model",
+            "model": "item/strider_spawn_egg"
+        }
+    }
+}

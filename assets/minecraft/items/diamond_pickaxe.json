@@ -1,0 +1,26 @@
+{
+"model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "entries": [
+        {
+            "threshold": 100,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/diamond_hammer"
+            }
+        },
+        {
+            "threshold": 101,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/diamond_excavator"
+            }
+        }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "item/diamond_pickaxe"
+    }
+}
+}

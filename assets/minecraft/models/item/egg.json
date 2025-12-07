@@ -1,0 +1,10 @@
+{
+ "parent": "item/handheld",
+ "textures": {
+  "layer0": "item/egg"
+ },
+ "overrides": [
+  { "predicate": { "custom_model_data": 100}, "model": "juix_resources:item/leaves_bridge_egg" },
+  { "predicate": { "custom_model_data": 101}, "model": "juix_resources:item/ice_bridge_egg" }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+"model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "entries": [
+        {
+            "threshold": 100,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/iron_battle_axe"
+            }
+        },
+        {
+            "threshold": 101,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/iron_tree_axe"
+            }
+        }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "item/iron_axe"
+    }
+}
+}

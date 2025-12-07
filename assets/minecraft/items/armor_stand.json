@@ -1,0 +1,26 @@
+{
+"model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "entries": [
+        {
+            "threshold": 110,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/tp1"
+            }
+        },
+        {
+            "threshold": 111,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/tp2"
+            }
+        }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "item/armor_stand"
+    }
+}
+}

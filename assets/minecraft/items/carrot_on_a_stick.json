@@ -1,0 +1,54 @@
+{
+"model": {
+    "type": "range_dispatch",
+    "property": "custom_model_data",
+    "entries": [
+        {
+            "threshold": 100,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/tp1"
+            }
+        },
+        {
+            "threshold": 101,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/tp2"
+            }
+        },
+        {
+            "threshold": 110,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/fireball1"
+            }
+        },
+        {
+            "threshold": 111,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/fireball2"
+            }
+        },
+        {
+            "threshold": 112,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/fireball3"
+            }
+        },
+        {
+            "threshold": 120,
+            "model": {
+                "type": "model",
+                "model": "juix_resources:item/dynamite"
+            }
+        }
+    ],
+    "fallback": {
+        "type": "model",
+        "model": "item/carrot_on_a_stick"
+    }
+}
+}

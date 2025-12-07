@@ -1,0 +1,12 @@
+{
+ "parent": "item/handheld",
+ "textures": {
+  "layer0": "item/paper"
+ },
+ "overrides": [
+  { "predicate": { "custom_model_data": 100}, "model": "juix_resources:item/item_magnet" },
+  { "predicate": { "custom_model_data": 101}, "model": "juix_resources:item/super_item_magnet" },
+  
+  { "predicate": { "custom_model_data": 110}, "model": "juix_resources:item/dynamite_block" }
+ ]
+}

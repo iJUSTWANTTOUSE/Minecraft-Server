@@ -1,0 +1,26 @@
+{
+   "model": {
+      "type": "range_dispatch",
+      "property": "custom_model_data",
+      "entries": [
+         {
+               "threshold": 100,
+               "model": {
+                  "type": "model",
+                  "model": "juix_resources:item/golden_battle_axe"
+               }
+         },
+         {
+               "threshold": 101,
+               "model": {
+                  "type": "model",
+                  "model": "juix_resources:item/golden_tree_axe"
+               }
+         }
+      ],
+      "fallback": {
+         "type": "model",
+         "model": "item/golden_axe"
+      }
+   }
+}
