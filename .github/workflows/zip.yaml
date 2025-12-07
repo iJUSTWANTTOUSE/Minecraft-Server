@@ -1,4 +1,4 @@
-name: Build Resource Pack Zip
+name: Build Resource Pack Zip and Upload to Pixeldrain
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # allow creating releases
+  contents: write # allow creating releases
 
 jobs:
   build:
@@ -39,15 +39,23 @@ jobs:
             MyResourcePack-v${{ github.run_number }}.zip
             MyResourcePack.zip
 
-      - name: Push stable zip to GitHub Pages
+      - name: Upload to Pixeldrain 📤
         env:
-          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          # Use a GitHub Secret to store your Pixeldrain API Key securely
+          PIXELDRAIN_API_KEY: ${{ secrets.PIXELDRAIN_API_KEY }}
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git clone --branch gh-pages https://github.com/${{ github.repository }} gh-pages
-          cp MyResourcePack.zip gh-pages/MyResourcePack.zip
-          cd gh-pages
-          git add MyResourcePack.zip
-          git commit -m "Update resource pack for release v${{ github.run_number }}" || echo "Nothing to commit"
-          git push origin gh-pages
+          # Base64 encode the API key for HTTP Basic Authentication: ":<api_key>"
+          AUTH_HEADER=$(echo -n ":$PIXELDRAIN_API_KEY" | base64)
+
+          # Define the filename to use in the URL (e.g., "MyResourcePack.zip")
+          FILE_NAME="MyResourcePack.zip"
+          
+          # Use curl with the PUT method to upload the file
+          # -X PUT: specifies the HTTP method
+          # -H: adds the Authorization header
+          # --data-binary: sends the file's raw content as the request body
+          # The filename is part of the API URL: https://pixeldrain.com/api/file/MyResourcePack.zip
+          curl -X PUT \
+            -H "Authorization: Basic $AUTH_HEADER" \
+            --data-binary "@$FILE_NAME" \
+            "https://pixeldrain.com/api/file/$FILE_NAME"
