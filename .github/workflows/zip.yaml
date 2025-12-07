@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write   # allow creating releases
 
 jobs:
   build:
@@ -17,9 +17,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Zip Resource Pack
+      - name: Zip Resource Pack (versioned + stable)
         run: |
+          # Versioned zip (for history)
           zip -r MyResourcePack-v${{ github.run_number }}.zip . -x "*.github*" "*.git*" "*.DS_Store"
+          # Stable zip (always same name for server)
+          cp MyResourcePack-v${{ github.run_number }}.zip MyResourcePack.zip
 
       - name: Upload Zip as Artifact
         uses: actions/upload-artifact@v4
@@ -32,4 +35,6 @@ jobs:
         with:
           tag: v${{ github.run_number }}
           name: "My Resource Pack v${{ github.run_number }}"
-          artifacts: MyResourcePack-v${{ github.run_number }}.zip
+          artifacts: |
+            MyResourcePack-v${{ github.run_number }}.zip
+            MyResourcePack.zip
