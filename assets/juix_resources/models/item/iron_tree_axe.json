@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "juix_resources:item/special_items/iron_tree_axe"
+  }
+}

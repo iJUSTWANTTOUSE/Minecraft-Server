@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "juix_resources:item/special_items/netherite_battle_axe"
+  }
+}

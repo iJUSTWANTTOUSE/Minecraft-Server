@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "juix_resources:item/special_items/tp1"
+  }
+}
