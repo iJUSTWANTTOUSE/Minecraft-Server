@@ -38,3 +38,16 @@ jobs:
           artifacts: |
             MyResourcePack-v${{ github.run_number }}.zip
             MyResourcePack.zip
+
+      - name: Push stable zip to GitHub Pages
+        env:
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git clone --branch gh-pages https://github.com/${{ github.repository }} gh-pages
+          cp MyResourcePack.zip gh-pages/MyResourcePack.zip
+          cd gh-pages
+          git add MyResourcePack.zip
+          git commit -m "Update resource pack for release v${{ github.run_number }}" || echo "Nothing to commit"
+          git push origin gh-pages
